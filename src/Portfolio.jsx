@@ -677,19 +677,13 @@ function FloatingChat() {
 /* ═══ MAIN ═══ */
 export default function Portfolio() {
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    document.documentElement.style.scrollBehavior = "auto";
-    window.scrollTo(0, 0);
-    document.body.style.overflow = "hidden";
-    const t = setTimeout(() => { setLoading(false); document.body.style.overflow = ""; document.documentElement.style.scrollBehavior = "smooth"; }, 1800);
-    return () => clearTimeout(t);
-  }, []);
+  useEffect(() => { window.scrollTo(0, 0); const t = setTimeout(() => setLoading(false), 800); return () => clearTimeout(t); }, []);
 
   return (
     <div className="min-h-screen text-white" style={{ backgroundColor: "#0a0a0a" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700&display=swap');
-        :root{--ff:'Sora',sans-serif}*{font-family:var(--ff)}html{scroll-behavior:smooth}
+        :root{--ff:'Sora',sans-serif}*{font-family:var(--ff)}
         ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:#0a0a0a}::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.08);border-radius:10px}
         @keyframes fadeUp{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
         ::selection{background:rgba(255,255,255,0.15);color:white}
