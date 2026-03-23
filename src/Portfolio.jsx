@@ -245,7 +245,7 @@ function SmokeBackground({ smokeColor = "#22d3ee" }) {
 function Hero() {
   const [ref, vis] = useReveal(0.05);
   return (
-    <section ref={ref} className="relative flex flex-col items-center justify-start overflow-hidden w-full" style={{ backgroundColor: "#0a0a0a", minHeight: "100vh", paddingTop: "clamp(60px, 12vh, 120px)" }}>
+    <section ref={ref} className="relative flex flex-col items-center justify-start overflow-hidden w-full" style={{ backgroundColor: "#0a0a0a", minHeight: "120vh", paddingTop: "clamp(60px, 12vh, 120px)" }}>
       <div className="absolute inset-0 z-0" style={{ opacity: vis ? 0.7 : 0, transition: "opacity 2s ease 0.3s" }}>
         <SmokeBackground smokeColor="#22d3ee" />
       </div>
