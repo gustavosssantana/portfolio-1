@@ -677,7 +677,13 @@ function FloatingChat() {
 /* ═══ MAIN ═══ */
 export default function Portfolio() {
   const [loading, setLoading] = useState(true);
-  useEffect(() => { window.scrollTo(0, 0); const t = setTimeout(() => setLoading(false), 1800); return () => clearTimeout(t); }, []);
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    document.body.style.overflow = "hidden";
+    const t = setTimeout(() => { setLoading(false); document.body.style.overflow = ""; document.documentElement.style.scrollBehavior = "smooth"; }, 1800);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <div className="min-h-screen text-white" style={{ backgroundColor: "#0a0a0a" }}>
